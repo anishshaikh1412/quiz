@@ -1,63 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JS Quiz</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <!-- Main wrapper -->
+    <div class="container">
 
-<div class="shell">
-  <div class="header">
-    <span class="brand">JS Quiz</span>
-    <span class="meta" id="totalLabel">— / — questions</span>
-  </div>
-  <div class="progress-track">
-    <div class="progress-fill" id="progressFill"></div>
-  </div>
+        <!-- Quiz title & total question count -->
+        <div class="info">
+            <h1>JS Quiz</h1>
+            <h3>Total question: <span id="totalque"></span></h2>
+        </div>
+        
+        <!-- Question + options + nav buttons -->
+        <div class="que-container">
 
-  <div class="card">
-    <!-- Quiz area -->
-    <div class="quiz-area" id="quizArea">
-      <div class="timer-row">
-        <div class="timer-dot" id="timerDot"></div>
-        <span class="timer-text" id="timerText">00:00</span>
-      </div>
+            <!-- Countdown timer -->
+            <p id="time"></p>
+        
+            <!-- Question text (filled by JS) -->
+            <p class="que"></p>
 
-      <div class="question-num" id="questionNum">Question 1</div>
-      <div class="question-text" id="questionText"></div>
+            <!-- 4 radio options (A to D) -->
+            <div class="options">
+                <div class="opt-con">
+                    <input type="radio" class="radio" id="a" name="ans" value="a"><label for="a" class="opt"></label>
+                </div>
+                <div class="opt-con">
+                    <input type="radio" class="radio" id="b" name="ans" value="b"><label for="b" class="opt"></label>
+                </div>
+                <div class="opt-con">
+                    <input type="radio" class="radio" id="c" name="ans" value="c"><label for="c" class="opt"></label>
+                </div>
+                <div class="opt-con">
+                    <input type="radio" class="radio" id="d" name="ans" value="d"><label for="d" class="opt"></label>
+                </div>
+            </div>
 
-      <div class="options" id="optionsContainer"></div>
-
-      <div class="btn-row">
-        <button class="btn" id="btnPrev" disabled>← Prev</button>
-        <button class="btn btn-primary" id="btnNext">Next →</button>
-      </div>
+            <!-- Prev / Next(Submit on last question) buttons -->
+            <div class="buttons">
+                <button id="prev"></button>
+                <button id="next"></button>
+            </div>
+        </div>
     </div>
-
-    <!-- Score screen -->
-    <div class="score-screen" id="scoreScreen">
-      <div class="score-label">Your Score</div>
-      <div class="score-big" id="scoreBig">0/5</div>
-      <div class="score-sub" id="scoreSub"></div>
-      <button class="btn-sheet" id="btnViewSheet">View Answer Sheet</button>
+    <!-- Answer sheet overlay (hidden by default, shown after submit) -->
+    <div class="ans-con">
+        <div class="anssheet">
+            
+        </div>
     </div>
-  </div>
-</div>
-
-<!-- Answer sheet overlay -->
-<div class="overlay" id="overlay">
-  <div class="sheet">
-    <div class="sheet-header">
-      <span class="sheet-title">Answer Sheet</span>
-      <button class="close-btn" id="btnClose">✕</button>
-    </div>
-    <div id="sheetBody"></div>
-  </div>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
