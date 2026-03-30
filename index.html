@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JS Quiz</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="shell">
+  <div class="header">
+    <span class="brand">JS Quiz</span>
+    <span class="meta" id="totalLabel">— / — questions</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <div class="card">
+    <!-- Quiz area -->
+    <div class="quiz-area" id="quizArea">
+      <div class="timer-row">
+        <div class="timer-dot" id="timerDot"></div>
+        <span class="timer-text" id="timerText">00:00</span>
+      </div>
+
+      <div class="question-num" id="questionNum">Question 1</div>
+      <div class="question-text" id="questionText"></div>
+
+      <div class="options" id="optionsContainer"></div>
+
+      <div class="btn-row">
+        <button class="btn" id="btnPrev" disabled>← Prev</button>
+        <button class="btn btn-primary" id="btnNext">Next →</button>
+      </div>
+    </div>
+
+    <!-- Score screen -->
+    <div class="score-screen" id="scoreScreen">
+      <div class="score-label">Your Score</div>
+      <div class="score-big" id="scoreBig">0/5</div>
+      <div class="score-sub" id="scoreSub"></div>
+      <button class="btn-sheet" id="btnViewSheet">View Answer Sheet</button>
+    </div>
+  </div>
+</div>
+
+<!-- Answer sheet overlay -->
+<div class="overlay" id="overlay">
+  <div class="sheet">
+    <div class="sheet-header">
+      <span class="sheet-title">Answer Sheet</span>
+      <button class="close-btn" id="btnClose">✕</button>
+    </div>
+    <div id="sheetBody"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
